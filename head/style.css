@@ -1,16 +1,15 @@
-*{
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+
 /* Style pour le block qui contien les bouton doption et le 
 formulair d'inscription */
 h1{
     text-align: center;
 
 }
-.block_1{
+.block_1 {
     max-width: 120vh;
-    height: auto;
-    margin: auto;
+    
+    margin: 50px auto 50px auto;
+    
     margin-top: 5%;
     box-shadow: 0 0 10px #9c9a9a;
     border-radius: 5px;
@@ -42,24 +41,24 @@ h1{
 
 
 /* Style pour le block du formulaire */
-.Inscription{
+.Inscription {
     width: 100%;
     padding: 15px;
 
 }
 
-.Inscription label{
+.Inscription label {
     font-weight: bold;
 }
 
-.submit{
+.submit {
     width: 100%;
 }
 
 
 /* Style pour l photo */
-.image{
-    width: 100px;
-    height: 100px;
+.image {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }

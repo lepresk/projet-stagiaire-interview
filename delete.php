@@ -1,21 +1,20 @@
 <?php
 
-// Declaration variable de message
-$message = "";
+require 'functions.php';
 
-//Code pour la suppression du stagiaire
-if (isset($_POST['supprime']) && !empty($_POST['id'])) {
+if (!empty($_POST['id'])) {
 
-    
-    // Extraction des valeur du post en variable
-    extract($_POST);
-    
-    $q = $db->prepare("DELETE FROM stagiaires WHERE stagiaires . id = '$id'");
+  $data = find_stagiaire($_POST['id']);
 
-       //Execution de la requete
-      $q->execute();
-  
-      $message = "le compte à été supprimer";
-  
-  }
-?>
+  $q = db()->prepare("DELETE FROM stagiaires WHERE id = ?");
+  $q->execute([$_POST['id']]);
+
+  unlink($data['photo']);
+
+  flash('Le stagiaire a bien été supprimer');
+} else {
+  flash("Il ne s'est absolument rien passé", type: "danger");
+}
+
+header('Location: /?read');
+exit;
